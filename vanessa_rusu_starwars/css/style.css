@@ -1,0 +1,246 @@
+body {
+	background: url(../images/star-wars-bg2.jpg) no-repeat fixed right;
+	background-size: cover;
+	background-color: #090806;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 200;
+	font-size: 16px;
+	line-height: 22px;
+	/*text-align: justify;*/
+	letter-spacing: 1px;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	display: none;
+}
+.fullHeight {
+	min-height: 100vh;
+	height: 100vh;
+}
+#wrapper {
+	width: 100%;
+	position: relative;
+}
+
+
+#mainContent {
+	width: 33.3%;
+	margin-top: 0;
+	background-color: rgba(75,73,76,0.4);
+	float: left;
+	min-height: 100vh;
+}
+
+#mainContentContainer {
+	margin: 0 80px;
+}
+
+#logo {
+	padding: 50px 0 30px 0;
+}
+
+#content p {
+ /*color: #ff6;*/
+ color: #ab9498;
+ margin: 0 0 10px 0;
+ font-size: 14px;
+}
+
+#startButton {
+	/*background-color: #2e2222;*/
+	/*background-color: #562818;*/
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+	position: relative;
+	transition: all 0.2s ease-in;
+}
+
+#startButton:hover {
+	background-color: #9f351d;
+	/*background-color: #fff;*/
+	box-shadow: 0px 0px 4px 2px #fff, inset 0px 0px 8px 2px #fad7af;
+/*	background-color: #000;
+	border: 1px solid yellow;*/
+}
+
+#startButton::after {
+	content: '';
+	display: block;
+	background-color: red;
+	opacity: 0.3;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -10;
+}
+
+#results a {
+	color: #908f9d;
+	font-weight: 200;
+
+}
+
+#results::after {
+	content: '';
+	clear: both;
+	display: block;
+	padding-bottom: 2em;
+
+}
+#results li {
+	border-bottom: 1px solid #666;
+	padding: 20px 0;
+	transition: all 0.2s ease-in-out;
+	/*color: #fff;*/
+}
+
+#results li:hover {
+	/*font-weight: 400;*/
+	color: #fff;
+	/*color: #842626;*/
+	/*opacity: 0.2;*/
+}
+
+
+.collapse {
+	float: right;
+	width: 50px;
+	margin-right: -25px;
+}
+.collapse img {
+	width: 100%;
+}
+.collapse::after {
+	content: '';
+	display: block;
+	clear: both;
+	margin-bottom: 60px;
+}
+
+
+.filmTitle {
+	clear: both;
+	width: 80%;
+	margin: 0 auto;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 100;
+	line-height: 40px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 30px;
+	/*text-align: center;*/
+}
+#detailSection {
+	float: left;
+	width: 33.3%;
+	background-color: rgba(67,55,59, 0.9);
+	position: fixed;
+	left: 33.3%;
+	/*z-index: -10;*/
+}
+/*#detailSection:after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.3;
+	z-index: -10;*/
+	/*background: url(http://moviefiles.alphacoders.com/618/poster-618.jpg)top center;*/
+/*	background-size: cover;
+}*/
+#detailSection p {
+	width: 80%;
+	color: #fff;
+	margin:  10px auto;
+	font-weight: 100;
+	font-size: 14px;
+	/*background-color: rgba(0,0,0,0.4);*/
+	/*padding: 25px 10px;*/
+}
+
+#detailContent {
+	position: absolute;
+	top: 100px;
+}
+
+.moviePoster {
+	background-size: cover;
+	background-position: top center;
+	background-repeat: no-repeat;
+	/*width: 100%;*/
+	height: inherit;
+	/*background-color: red;*/
+	opacity: 0.2;
+}
+
+.moviePoster img {
+	width: 80%;
+}
+
+/*-----------------------------------------------------------------*/
+
+@keyframes fadeIn {
+	from {
+		/*margin-left: -100%;*/
+		width:0;
+	}
+  to {
+    opacity: 1;
+    /*margin-left: 0;*/
+    width: 30%;
+
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes fadeOut {
+	from {
+		width:30%;
+	}
+  to {
+    opacity: 0;
+    width: 0;
+
+  }
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOut 0.5s ease-in-out 1 forwards;
+}
+
+@keyframes characterFadeIn {
+	from {
+		/*margin-left: -100%;*/
+		width:0;
+	}
+  to {
+    opacity: 1;
+    /*margin-left: 0;*/
+    width: 100%;
+
+  }
+}
+
+.character-fade-in {
+  opacity: 0;
+  animation: characterFadeIn 0.5s ease-out 1 forwards;
+}
+
