@@ -2,7 +2,6 @@
 <html> <!--using data will make it validate-->
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Star Wars Fan Guide</title>
 	<link href="css/reset.css" rel="stylesheet" type="text/css" media="screen">
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="screen">
@@ -10,40 +9,39 @@
 	<link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<h1 class="hidden">Star Wars</h1>
+	<h1 class="hidden">Star Wars Fan Guide</h1>
 	<div id="wrapper" class="fullHeight">
 		<div id="mainContent" class="fullHeight">
 			<div id="mainContentContainer">
-			<figure id="logo">
-				<object data="images/star-wars-logo.svg" type="image/svg+xml">
-  					<img src="images/star-wars-logo.png" />
-				</object>
-			</figure>
-			<section id="content">
-				<p>Star Wars is an American epic space opera franchise, centered on a film series created by George Lucas. It depicts the adventures of various characters "a long time ago in a galaxy far, far away."</p>
-				<a href="#"><div id="startButton">Show me the characters</div></a>
-				<input type="text" name="filter" id="filter">
-				<ul id="results"></ul>
-			</section>	
+				<figure id="logo">
+					<object data="images/star-wars-logo.svg" type="image/svg+xml">
+  						<img src="images/star-wars-logo.png" alt="Star Wars Logo" />
+					</object>
+				</figure>
+				<div id="content">
+					<p>Star Wars is an American epic space opera franchise, centered on a film series created by George Lucas. It depicts the adventures of various characters "a long time ago in a galaxy far, far away." Click the button below for a list of characters, then click their name to see a film they appeared in!</p>
+					<a href="#"><div id="startButton">Show me the characters</div></a>
+					<div id="filterContainer" class="hidden">
+						<input type="text" name="filter" id="filter" placeholder="Filter Characters">
+					</div>
+					<ul id="results"></ul>
+				</div>	
+	  		</div>
   		</div>
-  		</div>
-  		<section id="detailSection" class="fullHeight hidden">
+  		<div id="detailSection" class="fullHeight hidden">
   			<figure class="moviePoster">
   			</figure>
   			<div id="detailContent">
-  			<div class="collapse"><img src="images/collapse.png"></div>
-  			<h3 class="filmTitle"></h3>
-  			<p class="episodeId"></p>
-  			<p class="movieCrawl"></p>
-
-  			
-  		</section>
+  				<div class="collapse"><img src="images/collapse.png" alt="collapse icon"></div>
+  				<span class="filmTitle"></span>
+  				<p class="episodeId"></p>
+  				<p class="movieCrawl"></p>
+  			</div>
+  		</div>
   	</div>
-  </div>
 
 
 <script src="js/main.js"></script>
 <script src="js/utils.js"></script>
 </body>
 </html>
-

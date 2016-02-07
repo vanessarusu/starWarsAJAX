@@ -1,3 +1,5 @@
+/* GLOBAL STYLES ---------------------------------------------------------------------------------------------------------------------*/
+
 body {
 	background: url(../images/star-wars-bg2.jpg) no-repeat fixed right;
 	background-size: cover;
@@ -6,9 +8,7 @@ body {
 	font-weight: 200;
 	font-size: 16px;
 	line-height: 22px;
-	/*text-align: justify;*/
 	letter-spacing: 1px;
-
 }
 
 a {
@@ -22,22 +22,31 @@ a {
 	min-height: 100vh;
 	height: 100vh;
 }
+
+/* CHARACTER LOADING PANEL ------------------------------------------------------------------------------------------------------------*/
+
+.activeCharacter {
+	/*color: #9e3e3e;*/
+	color: yellow;
+}
+
 #wrapper {
 	width: 100%;
 	position: relative;
 }
 
-
 #mainContent {
 	width: 33.3%;
 	margin-top: 0;
-	background-color: rgba(75,73,76,0.4);
+	background-color: rgba(75,73,76,0.7);
 	float: left;
 	min-height: 100vh;
+	transition: all 0.5s ease-out;
 }
 
 #mainContentContainer {
-	margin: 0 80px;
+	width: 80%;
+	margin: 0 auto;
 }
 
 #logo {
@@ -45,15 +54,13 @@ a {
 }
 
 #content p {
- /*color: #ff6;*/
- color: #ab9498;
- margin: 0 0 10px 0;
- font-size: 14px;
+	color: #fff;
+	/*color: #ab9498;*/
+	margin: 0 0 10px 0;
+	font-size: 14px;
 }
 
 #startButton {
-	/*background-color: #2e2222;*/
-	/*background-color: #562818;*/
 	padding: 10px 0;
 	width: 100%;
 	text-align: center;
@@ -64,10 +71,7 @@ a {
 
 #startButton:hover {
 	background-color: #9f351d;
-	/*background-color: #fff;*/
 	box-shadow: 0px 0px 4px 2px #fff, inset 0px 0px 8px 2px #fad7af;
-/*	background-color: #000;
-	border: 1px solid yellow;*/
 }
 
 #startButton::after {
@@ -81,6 +85,19 @@ a {
 	top: 0;
 	left: 0;
 	z-index: -10;
+}
+
+input {
+	width: 100%;
+	border: none;
+	padding: 10px;
+	margin: 20px 0;
+	box-sizing: border-box;
+}
+
+#filterContainer {
+	width: 100%;
+	margin: 10px 0;
 }
 
 #results a {
@@ -100,15 +117,15 @@ a {
 	border-bottom: 1px solid #666;
 	padding: 20px 0;
 	transition: all 0.2s ease-in-out;
-	/*color: #fff;*/
+
 }
 
 #results li:hover {
-	/*font-weight: 400;*/
 	color: #fff;
-	/*color: #842626;*/
-	/*opacity: 0.2;*/
 }
+
+
+/* DETAILED INFO PANEL ------------------------------------------------------------------------------------------------------------*/
 
 
 .collapse {
@@ -126,8 +143,8 @@ a {
 	margin-bottom: 60px;
 }
 
-
 .filmTitle {
+	display: block;
 	clear: both;
 	width: 80%;
 	margin: 0 auto;
@@ -138,51 +155,34 @@ a {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 	font-size: 30px;
-	/*text-align: center;*/
 }
+
 #detailSection {
 	float: left;
 	width: 33.3%;
 	background-color: rgba(67,55,59, 0.9);
 	position: fixed;
 	left: 33.3%;
-	/*z-index: -10;*/
 }
-/*#detailSection:after {
-	content: '';
-	display: block;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0.3;
-	z-index: -10;*/
-	/*background: url(http://moviefiles.alphacoders.com/618/poster-618.jpg)top center;*/
-/*	background-size: cover;
-}*/
+
 #detailSection p {
 	width: 80%;
 	color: #fff;
 	margin:  10px auto;
 	font-weight: 100;
 	font-size: 14px;
-	/*background-color: rgba(0,0,0,0.4);*/
-	/*padding: 25px 10px;*/
 }
 
 #detailContent {
 	position: absolute;
-	top: 100px;
+	top: 50px;
 }
 
 .moviePoster {
 	background-size: cover;
 	background-position: top center;
 	background-repeat: no-repeat;
-	/*width: 100%;*/
 	height: inherit;
-	/*background-color: red;*/
 	opacity: 0.2;
 }
 
@@ -190,57 +190,250 @@ a {
 	width: 80%;
 }
 
-/*-----------------------------------------------------------------*/
+/* KEYFRAMES AND ANIMATIONS ------------------------------------------------------------------------------------------------------------*/
+
+@-webkit-keyframes fadeIn {
+	from {
+		width:0;
+	}
+  	to {
+    	opacity: 1;
+    	width: 30%;
+  }
+}
 
 @keyframes fadeIn {
 	from {
-		/*margin-left: -100%;*/
 		width:0;
 	}
-  to {
-    opacity: 1;
-    /*margin-left: 0;*/
-    width: 30%;
-
-  }
+  	to {
+    	opacity: 1;
+    	width: 30%;
+  	}
 }
 
 .fade-in {
   opacity: 0;
-  animation: fadeIn 0.5s ease-in-out 1 forwards;
+  -webkit-animation: fadeIn 0.8s ease-in-out 1 forwards;
+  animation: fadeIn 0.8s ease-in-out 1 forwards;
+}
+
+@-webkit-keyframes fadeOut {
+	from {
+		width:30%;
+	}
+  	to {
+    	opacity: 0;
+    	width: 0;
+  	}
 }
 
 @keyframes fadeOut {
 	from {
 		width:30%;
 	}
-  to {
-    opacity: 0;
-    width: 0;
-
-  }
+  	to {
+    	opacity: 0;
+    	width: 0;
+  	}
 }
 
 .fade-out {
   opacity: 1;
-  animation: fadeOut 0.5s ease-in-out 1 forwards;
+  -webkit-animation: fadeOut 0.8s ease-in-out 1 forwards;
+  animation: fadeOut 0.8s ease-in-out 1 forwards;
+}
+
+@-webkit-keyframes characterFadeIn {
+	from {
+		width:0;
+	}
+  	to {
+    	opacity: 1;
+    	width: 100%;
+  	}
 }
 
 @keyframes characterFadeIn {
 	from {
-		/*margin-left: -100%;*/
 		width:0;
 	}
-  to {
-    opacity: 1;
-    /*margin-left: 0;*/
-    width: 100%;
-
-  }
+  	to {
+    	opacity: 1;
+    	width: 100%;
+	}
 }
 
 .character-fade-in {
   opacity: 0;
-  animation: characterFadeIn 0.5s ease-out 1 forwards;
+  -webkit-animation: characterFadeIn 0.8s ease-out 1 forwards;
+  animation: characterFadeIn 0.8s ease-out 1 forwards;
 }
 
+		
+@-webkit-keyframes searchFadeIn {
+	from {
+		width:0;
+		height: 0;
+		padding: 0;
+	}
+  	to {
+    	opacity: 1;
+    	width: 100%;
+    	display: block;
+    	padding: auto;
+    	height: 100%;
+  	}
+}
+
+@keyframes searchFadeIn {
+	from {
+		width:0;
+		height: 0;
+		padding: 0;
+	}
+  	to {
+    	opacity: 1;
+    	width: 100%;
+    	display: block;
+    	padding: auto;
+    	height: 100%;
+  	}
+}
+
+.searchFadeIn {
+	opacity: 0;
+  	display: block;
+  	-webkit-animation: searchFadeIn 0.2s ease-in-out 1 forwards;
+  	animation: searchFadeIn 0.2s ease-in-out 1 forwards;
+}
+
+@-webkit-keyframes searchFadeOut {
+	from {
+		width:100%;
+		height: auto;
+	}
+  	to {
+    	opacity: 0;
+    	height: 0px;
+    	padding: 0;
+    	width: 0;
+  	}
+}
+
+@keyframes searchFadeOut {
+	from {
+		width:100%;
+		height: auto;
+	}
+  	to {
+    	opacity: 0;
+    	height: 0px;
+    	padding: 0;
+    	width: 0;
+  	}
+}
+
+.searchFadeOut {
+  	opacity: 1;
+  	-webkit-animation: searchFadeOut 0.2s ease-in-out 1 forwards;
+  	animation: searchFadeOut 0.2s ease-in-out 1 forwards;
+}
+
+
+/* MEDIA QUERIES ------------------------------------------------------------------------------------------------------------*/
+
+/* MEDIUM SCREENS -------------------------------------------*/
+
+@media screen and (max-width: 1024px) {
+	.collapse {
+		margin-right: 25px;
+	}
+	
+	#mainContent {
+		width: 50%;
+		background-color: rgba(73,73,76,0.8);
+		/*background-color: rgba(0,0,0,0.6);*/
+	}
+	
+	#startButton::after {
+		opacity: 0.9;
+	}
+
+	#results li {
+		padding: 8px 0;
+	}
+
+	#detailSection {
+		position: fixed;
+		float: none;
+		width: 50%;
+		left: 50%;
+	}
+
+	#content p {
+		color: white;
+		text-align: justify;
+	}
+	@-webkit-keyframes fadeIn {
+		from {
+			width:0;
+		}
+  		to {
+    		opacity: 1;
+    		width: 50%;
+  		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			width:0;
+		}
+  		to {
+    		opacity: 1;
+    		width: 50%;
+  		}
+	}
+}
+
+
+/* SMALL SCREENS -------------------------------------------*/
+
+@media screen and (max-width: 768px) {
+	#mainContent {
+		width: 80%;
+		min-width: 400px;
+		margin: 0 auto;
+		float: none;
+		/*background-color: rgba(73,73,76,0.9);*/
+		background-color: rgba(20,20,20,0.8);
+	}
+
+	#detailSection {
+		position: relative;
+		left: 0;
+		float: none;
+		width: 80%;
+		margin: 0 auto;
+		animation: none;
+		-webkit-animation: none;
+	}
+
+	#detailContent {
+		top: 15vh;
+	}
+
+	.collapse {
+		display: none;
+	}
+
+	.fade-in, .fade-out {
+		opacity: 1;
+		animation: none;
+		-webkit-animation: none;
+	}
+	
+	.fullHeight {
+		min-height: 50vh;
+	}
+}
